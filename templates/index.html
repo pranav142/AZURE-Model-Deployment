@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Disease Detector</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <h1 class="landing-head">Get a Skin Diagnosis in Seconds</h1>
+
+    <div class ="container">
+      <h3>Upload your File</h3>
+      <div class="drag-area">
+        <div class="icon">
+          <i class="fas fa-images"></i>
+        </div>
+        <span class="support">Supports: JPEG, JPG</span>
+      </div>
+    </div>
+    
+    <div class = "second-container">
+      <button onclick = "uploadImage()" class = "uploadButton">Upload</button>
+      <button onclick = "browseFiles()" class = "browseButton">Choose Files</button>
+    </div>
+
+    <form action="/" id="upload-form" method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" id="file" hidden> 
+      <input type="submit" value="Upload" id="submit" hidden>
+    </form>
+
+    <section class="results-container">
+      <p class="results-text">This is where your results will be displayed</p>
+      <p class="predictions-text">{{ prediction_text }}</p>
+    </section>
+    <script src="static/js/index.js"></script>
+  </body>
+</html>
